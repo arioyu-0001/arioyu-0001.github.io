@@ -1,0 +1,19 @@
+# 填写 _data/socials.yml 对应账号后，该占位图标自动隐藏。
+- key: email
+  label: Email
+  icon: fa-solid fa-envelope
+- key: scholar_userid
+  label: Google Scholar
+  icon: ai ai-google-scholar
+- key: github_username
+  label: GitHub
+  icon: fa-brands fa-github
+- key: linkedin_username
+  label: LinkedIn
+  icon: fa-brands fa-linkedin
+- key: x_username
+  label: X
+  icon: fa-brands fa-x-twitter
+- key: xiaohongshu
+  label: 小红书
+  icon: xhs-icon
