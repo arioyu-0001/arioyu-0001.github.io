@@ -1,4 +1,4 @@
-# 填写 _data/socials.yml 对应账号后，该占位图标自动隐藏。
+# A placeholder is hidden after its account is configured in _data/socials.yml.
 - key: email
   label: Email
   icon: fa-solid fa-envelope
@@ -15,5 +15,5 @@
   label: X
   icon: fa-brands fa-x-twitter
 - key: xiaohongshu
-  label: 小红书
+  label: Xiaohongshu
   icon: xhs-icon

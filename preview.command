@@ -8,5 +8,5 @@ if [ -x "$LOCAL_RUNTIME/ruby" ]; then
 fi
 export BUNDLE_USER_HOME="$SITE_ROOT/../../work/bundle-user"
 export GEM_SPEC_CACHE="$SITE_ROOT/../../work/gem-spec-cache"
-printf '\n本地主页：http://127.0.0.1:4000\n保留此窗口即可预览；按 Control+C 停止。\n\n'
+printf '\nLocal homepage: http://127.0.0.1:4000\nKeep this window open while previewing. Press Control+C to stop.\n\n'
 exec bundle exec jekyll serve --config _config.yml,_config.local.yml --host 127.0.0.1 --port 4000

@@ -1,4 +1,4 @@
-# 本地预览专用，保留正式配置中的原站图片处理设置。
+# Local preview settings. Production image settings remain unchanged.
 url: http://127.0.0.1:4000
 baseurl: ""
 imagemagick:

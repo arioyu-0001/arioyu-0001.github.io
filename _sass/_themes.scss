@@ -8,6 +8,11 @@
 $accent-light: #3f7da6;
 $accent-dark: #a3c6e3;
 
+// Keep the site comfortably wide on desktop, including during Jekyll live reloads.
+.container {
+  max-width: min(1180px, calc(100% - 2rem));
+}
+
 :root {
   color-scheme: light;
   --global-bg-color: #{v.$white-color};
@@ -793,6 +798,38 @@ nav .navbar-brand.title {
 }
 
 /* --- Profile glow ------------------------------------------------------- */
+.home-creative .home-intro {
+  display: grid;
+  grid-template-columns: minmax(190px, 30%) minmax(0, 1fr);
+  align-items: start;
+  gap: 2rem;
+}
+
+.home-creative .home-intro .profile {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+
+.home-creative .home-intro-copy {
+  min-width: 0;
+}
+
+.home-creative .home-intro-copy > :first-child {
+  margin-top: 0;
+}
+
+.home-creative .home-intro-copy ul {
+  margin: 1.25rem 0 1.5rem;
+  padding-left: 2rem;
+}
+
+.home-creative .home-intro-copy li {
+  margin-bottom: 0.3rem;
+  padding-left: 0.15rem;
+  line-height: 1.55;
+}
+
 .home-creative .profile {
   position: relative;
 }
@@ -815,6 +852,13 @@ nav .navbar-brand.title {
 
 .home-creative .profile:hover::after {
   opacity: 0.4;
+}
+
+@media (max-width: 575.98px) {
+  .home-creative .home-intro {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
 /* --- Social icons ------------------------------------------------------- */

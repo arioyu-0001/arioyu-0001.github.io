@@ -2,11 +2,11 @@
 layout: about
 title: About
 permalink: /
-subtitle: 你的职位 / 学位 · 你的学校或机构。<em>在这里写一句你的研究理念。</em>
+subtitle: Undergraduate at <a href="https://www.umass.edu/" target="_blank" rel="noopener noreferrer">UMass Amherst</a><br><em>I think, therefore I am</em>
 
 profile:
   align: left
-  image: profile-placeholder.svg
+  image: fenghao-yu.jpg
   image_circular: false # crops the image to make it circular
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
@@ -23,8 +23,15 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-你好！我是 **【你的姓名】**，目前在【学校 / 机构】从事【研究领域】的学习与研究。这里填写你的教育背景、导师及研究经历。
+I am Fenghao (Ario) Yu, a senior undergraduate in honor Informatics and Mathematics at [UMass Amherst](https://www.umass.edu/), where I am advised by [Prof. Chuang Gan](https://people.csail.mit.edu/ganchuang/). Currently, I am also working tightly with [Prof. James Z. Wang](https://ist.psu.edu/directory/jzw11) at [The Pennsylvania State University](https://www.psu.edu/).
 
-我的研究兴趣包括 **【研究方向一】**、**【研究方向二】** 和 **【研究方向三】**。欢迎交流与合作！
+My current research primarily focuses on **Computer Vision** and **Robotic Creativity**, with broader interdisciplinary interests spanning **Computational Art** and **Human-Centered Computing**. I am particularly interested in understanding creativity from both computational and human perspectives. I enjoy exploring questions such as:
 
-_当前为个人主页框架，资料、动态与论文示例均待替换。_
+- How can we build embodied agents capable of reasoning, creativity, and adaptation like humans?
+- Can computational methods reveal hidden patterns in artistic expression and aesthetics?
+- What distinguishes machine creativity from human creativity?
+- Can machines truly understand the world they perceive?
+
+When I'm not chasing research questions, I enjoy traveling, photography, and getting lost in piano melodies. I've spent over 12 years behind the lens, with a special passion for documentary photography and visual storytelling. Alongside UNESCO, I am committed to promoting the preservation of natural and cultural heritage through the lens of photography.
+
+Finding academic website too boring? Come to explore my [Photography Space!](https://ario-photography.netlify.app)

@@ -64,7 +64,7 @@
           {%- if forloop.last and author_array_limit == author_array_size %}and {% endif -%}
         {% endif %}
         {%- if author_is_self -%}
-          <strong style="color: var(--global-theme-color); border-bottom: 2px solid var(--global-theme-color); background-color: rgba(91, 142, 197, 0.16); padding: 0.05em 0.3em; border-radius: 0.2em;">
+          <strong style="color: var(--global-text-color); font-weight: 700;">
             {{- author.first }}
             {{ author_last_html -}}
           </strong>
@@ -144,7 +144,7 @@
       {% capture entrymonth %}{{ " " }}{{ entry.month | capitalize }}{% endcapture %}
     {% endif %}
     {% assign entryyear = '' %}
-    {% unless entry.abbr %}
+    {% unless entry.abbr or entry.suppress_year == 'true' %}
       {% if entry.year %}
         {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
       {% endif %}
@@ -197,13 +197,19 @@
       {% if entry.placeholder == 'true' %}
         {% assign placeholder_links = 'PDF,Code,Website' | split: ',' %}
         {% for label in placeholder_links %}
-          <span class="btn btn-sm z-depth-0 placeholder-link" aria-disabled="true" title="{{ label }} 链接待填写">{{ label }}</span>
+          <span class="btn btn-sm z-depth-0 placeholder-link" aria-disabled="true" title="{{ label }} link not provided">{{ label }}</span>
         {% endfor %}
       {% endif %}
       {% if entry.award %}
         <a class="award btn btn-sm z-depth-0" role="button">
           {%- if entry.award_name %}{{ entry.award_name }}{% else %}Awarded{% endif -%}
         </a>
+      {% endif %}
+      {% if entry.project %}
+        <a href="{{ entry.project }}" class="btn btn-sm z-depth-0" role="button">Project</a>
+      {% endif %}
+      {% if entry.paper %}
+        <a href="{{ entry.paper }}" class="btn btn-sm z-depth-0" role="button">Paper</a>
       {% endif %}
       {% if entry.doi %}
         <a href="https://doi.org/{{ entry.doi }}" class="btn btn-sm z-depth-0" role="button">DOI</a>
@@ -248,6 +254,9 @@
       {% endif %}
       {% if entry.code %}
         <a href="{{ entry.code }}" class="btn btn-sm z-depth-0" role="button">Code</a>
+      {% endif %}
+      {% if entry.dataset %}
+        <a href="{{ entry.dataset }}" class="btn btn-sm z-depth-0" role="button">Dataset</a>
       {% endif %}
       {% if entry.poster %}
         {% if entry.poster contains '://' %}

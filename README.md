@@ -1,26 +1,25 @@
-# Personal homepage
+# Fenghao Yu — Personal Homepage
 
-个人学术主页框架，基于 [EmpathYang/empathyang.github.io](https://github.com/EmpathYang/empathyang.github.io) 原源码及 al-folio。保留原布局与样式，个人资料使用待填写占位内容。
+This repository contains the source for Fenghao Yu's academic homepage. It is based on [EmpathYang/empathyang.github.io](https://github.com/EmpathYang/empathyang.github.io) and the al-folio Jekyll theme.
 
-## 编辑内容
+## Content
 
-- `_config.yml`：姓名、读音、网站信息。
-- `_pages/about.md`：个人简介、机构、研究方向和头像。
-- `_data/socials.yml`：邮箱与社交账号。
-- `_news/`：最新动态。
-- `_bibliography/papers.bib`：论文及链接。
-- `assets/img/`：头像和论文配图。
+- `_config.yml`: site identity and settings
+- `_pages/about.md`: biography, affiliations, research interests, and profile image
+- `_data/socials.yml`: contact and social links
+- `_news/`: news entries
+- `_bibliography/papers.bib`: publications and related links
+- `assets/img/`: profile and publication images
 
-详细说明见 [LOCAL_SETUP.md](LOCAL_SETUP.md)。
+See [LOCAL_SETUP.md](LOCAL_SETUP.md) for local setup instructions.
 
-## 自动部署
+## Deployment
 
-`main` 分支更新后，GitHub Actions 使用 Ruby 3.4.4 构建 Jekyll，并发布到 GitHub Pages。
-仓库 Settings → Pages → Source 应选择 **GitHub Actions**。
+Updates to the `main` branch are built with Ruby 3.4.4 and deployed to GitHub Pages through GitHub Actions. In the repository settings, Pages should use **GitHub Actions** as its source.
 
-## 本地预览
+## Local preview
 
-在 Ruby 3.4 环境中：
+With Ruby 3.4 installed:
 
 ```sh
 gem install bundler -v 4.0.6
@@ -28,6 +27,6 @@ bundle install
 bundle exec jekyll serve --config _config.yml,_config.local.yml
 ```
 
-本地工作区也可使用 `启动预览.command`。
+You can also run `preview.command` from the project folder.
 
-保留原始 MIT 许可证。来源版本详见 [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md)。
+The original MIT license and source attribution are preserved in [SOURCE_PROVENANCE.md](SOURCE_PROVENANCE.md) and [LICENSE](LICENSE).
