@@ -4,7 +4,12 @@
   {% if site.enable_publication_thumbnails %}
     <div class="col col-sm-6 abbr">
       <div style="position: relative; display: block;">
-        {% if entry.preview %}
+        {% if entry.preview_video %}
+          <video class="preview z-depth-1 rounded" style="width: 100%; height: auto;" autoplay muted loop playsinline
+            aria-label="Video demonstration for {{ entry.title | escape }}">
+            <source src="{{ entry.preview_video | prepend: '/assets/video/' | relative_url }}" type="video/mp4">
+          </video>
+        {% elsif entry.preview %}
           {% if entry.preview contains '://' %}
             <img class="preview z-depth-1 rounded" src="{{ entry.preview }}">
           {% else %}
@@ -186,7 +191,11 @@
         {%- if entry.venue_extra_url -%}</a>{%- endif -%}
       {% endif %}
       {%- comment -%} the badge already names the venue {%- endcomment -%}
-      {%- unless entry.abbr -%}{{ periodical | strip }}{%- endunless -%}
+      {%- if entry.submission_status -%}
+        Submitted to <em>{{ entry.journal }}</em>, {{ entry.submission_status }}
+      {%- elsif entry.abbr == nil -%}
+        {{ periodical | strip }}
+      {%- endif -%}
     </div>
     <div class="periodical">
       {{ entry.note | strip }}

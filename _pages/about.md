@@ -25,11 +25,11 @@ latest_posts:
 
 I am Fenghao (Ario) Yu, a senior undergraduate in honor Informatics and Mathematics at [UMass Amherst](https://www.umass.edu/), where I am advised by [Prof. Chuang Gan](https://people.csail.mit.edu/ganchuang/). Currently, I am also working tightly with [Prof. James Z. Wang](https://ist.psu.edu/directory/jzw11) at [The Pennsylvania State University](https://www.psu.edu/).
 
-My current research primarily focuses on **Computer Vision** and **Robotic Creativity**, with broader interdisciplinary interests spanning **Computational Art** and **Human-Centered Computing**. I am particularly interested in understanding creativity from both computational and human perspectives. I enjoy exploring questions such as:
+My current research primarily focuses on **Computer Vision** and **Robotic Creativity**, with broader interdisciplinary interests spanning **Computational Art** and **Human Perception**. I am particularly interested in what it means to see and to create, from both computational and human perspectives. I enjoy exploring questions such as:
 
 - How can we build embodied agents capable of reasoning, creativity, and adaptation like humans?
 - Can computational methods reveal hidden patterns in artistic expression and aesthetics?
-- What distinguishes machine creativity from human creativity?
+- What distinguishes machine seeing from human seeing?
 - Can machines truly understand the world they perceive?
 
 When I'm not chasing research questions, I enjoy traveling, photography, and getting lost in piano melodies. I've spent over 12 years behind the lens, with a special passion for documentary photography and visual storytelling. Alongside UNESCO, I am committed to promoting the preservation of natural and cultural heritage through the lens of photography.
