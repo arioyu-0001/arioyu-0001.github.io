@@ -8,19 +8,33 @@ overrides:
     upstream_sha256: 65219faad5445eb4456649d77921acd07845875bbcad4fb8f33b12b3d52d96d2
     local_sha256: d64a2fa7ec98e5e5ba396e6243f2da42f16eb03087aa72da7ce367f658d850bb
     acknowledged_at: '2026-11-25'
+  _includes/head.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.11
+    upstream_path: _includes/head.liquid
+    upstream_sha256: f4e1a5a93ba324f05760652013eb0d44769ec932477a5a0afa70c271153b8278
+    local_sha256: 01ada8968fb07b6947585ce7744dd97262be47359024dba86e1be2ce153fef1b
+    acknowledged_at: '2026-11-25'
+  _includes/header.liquid:
+    owner: al_folio_core
+    gem_version: 1.0.11
+    upstream_path: _includes/header.liquid
+    upstream_sha256: c8663513baded68d9fa5fbe4d6363a976535bbe201efe5138243d0ff03101058
+    local_sha256: ecd86ddede8bf62c8a1a1c03349070471ce8eed487c0543db47935f601aadd81
+    acknowledged_at: '2026-11-25'
   _includes/news.liquid:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _includes/news.liquid
     upstream_sha256: 2a37611539b5b3d59050cc20b8d008ca070e253d953724f6499a422e9b186f63
-    local_sha256: 585c01de0d7fb07d9a38715167aecd57b78eaa1ac1ca4a24ad4c5ed13032093a
+    local_sha256: b7ecbe1c6becf9cec082902c9de0ece665dd329ba515360ee44f4eca81e822ff
     acknowledged_at: '2026-11-25'
   _layouts/about.liquid:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _layouts/about.liquid
     upstream_sha256: 2c28eb83b71fe65f252202c11f0b4a19a9b6f1faccdc870b4f91c4ea51d0c6f1
-    local_sha256: 67a6ed90acf6448a53c074646263da6c6e43da1aa1941c7996c4ca45f9568b85
+    local_sha256: c2dd67c2eea75c1bdf9b6834dc93ea4529b1c0a4a6f582266c557bc91faa5904
     acknowledged_at: '2026-11-25'
   _layouts/bib.liquid:
     owner: al_folio_core
@@ -34,5 +48,5 @@ overrides:
     gem_version: 1.0.11
     upstream_path: _sass/_themes.scss
     upstream_sha256: b581e43dcfbf21c14f388e2b585474c886fad62f6b5a0444f7832e7f69745f1f
-    local_sha256: f5718bbea54b7d29d9d1c4ffcdb6602d516979347b6c4ac8a5de81358888910e
+    local_sha256: a6b86671df09bf50a16e7923831158bc21e6378d23ed8893a124790919ae22d7
     acknowledged_at: '2026-11-25'

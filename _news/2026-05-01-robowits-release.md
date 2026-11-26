@@ -6,4 +6,4 @@ inline: true
 related_posts: false
 ---
 
-[RoboWits](https://arxiv.org/abs/2605.30326) is released. Try your next-generation model on our benchmark to see if it can manipulate creatively!
+[RoboWits](https://arxiv.org/abs/2605.30326) is released. Try your next-generation model on our benchmark to see if it can manipulate creatively! 🤖

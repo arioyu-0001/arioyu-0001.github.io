@@ -11,9 +11,3 @@
 - key: linkedin_username
   label: LinkedIn
   icon: fa-brands fa-linkedin
-- key: x_username
-  label: X
-  icon: fa-brands fa-x-twitter
-- key: xiaohongshu
-  label: Xiaohongshu
-  icon: xhs-icon

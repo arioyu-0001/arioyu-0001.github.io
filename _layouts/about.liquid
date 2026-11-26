@@ -75,12 +75,20 @@ layout: default
         </div>
       {% endif %}
 
-      <div class="home-intro-copy">{{ content_parts[0] }}</div>
+      {% assign bio = content_parts[0] | split: '<!--BIO-MORE-->' %}
+      <div class="home-intro-copy">
+        {{ bio[0] }}
+        {% if bio[1] %}
+          <div id="bio-research">{{ bio[1] }}</div>
+          <div id="bio-personal">{{ bio[2] }}</div>
+          <button type="button" class="bio-toggle" aria-expanded="false" aria-controls="bio-research bio-personal" hidden>Read full bio</button>
+        {% endif %}
+      </div>
     </div>
 
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
-      <h2>
+      <h2 id="news">
         <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
@@ -96,7 +104,7 @@ layout: default
 
     <!-- Selected papers -->
     {% if page.selected_papers %}
-      <h2>
+      <h2 id="publications">
         <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
       </h2>
       {% include selected_papers.liquid %}
@@ -132,13 +140,41 @@ layout: default
     (function () {
       var root = document.querySelector('.home-creative');
       if (!root) return;
-      var sel = '.post-header, article > h2, ol.bibliography > li, .news .table-responsive tr, .social';
+      const toggle = root.querySelector('.bio-toggle');
+      const research = root.querySelector('#bio-research');
+      const personal = root.querySelector('#bio-personal');
+      const firstUpdate = root.querySelector('.news tr');
+      if (toggle && firstUpdate) {
+        let expanded = false;
+        function fitIntroduction() {
+          // Measure the full introduction before choosing the compact layout.
+          toggle.hidden = true;
+          research.hidden = false;
+          personal.hidden = false;
+          const fits = () => firstUpdate.getBoundingClientRect().bottom + window.scrollY <= document.documentElement.clientHeight - 12;
+          const compact = !fits();
+          toggle.hidden = !compact;
+          if (compact && !expanded) {
+            personal.hidden = true;
+            research.hidden = !fits();
+          }
+          toggle.setAttribute('aria-expanded', String(!personal.hidden));
+          toggle.textContent = expanded ? 'Show less' : 'Read full bio';
+        }
+        toggle.addEventListener('click', function () {
+          expanded = !expanded;
+          fitIntroduction();
+        });
+        fitIntroduction();
+        window.addEventListener('load', fitIntroduction, { once: true });
+        window.addEventListener('resize', fitIntroduction);
+        document.fonts.ready.then(fitIntroduction);
+      }
+
+      var sel = '.post-header, article > h2:not(#news), ol.bibliography > li, .social';
       var nodes = Array.prototype.slice.call(root.querySelectorAll(sel));
       root.querySelectorAll('ol.bibliography > li').forEach(function (el, i) {
         el.style.transitionDelay = i * 0.07 + 's';
-      });
-      root.querySelectorAll('.news .table-responsive tr').forEach(function (el, i) {
-        el.style.transitionDelay = i * 0.06 + 's';
       });
       if (!('IntersectionObserver' in window)) {
         nodes.forEach(function (el) {

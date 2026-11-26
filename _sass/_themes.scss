@@ -535,7 +535,17 @@ nav .navbar-brand.title {
   line-height: 1.05;
 }
 
+/*! A font by Jos Buivenga (exljbris) -> www.exljbris.com */
+@font-face {
+  font-family: "Fontin";
+  src: url("../fonts/Fontin-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 .home-creative .hero-name {
+  font-family: "Fontin", Georgia, serif;
   display: inline-block;
   font-weight: 700;
   color: var(--global-text-color);
@@ -584,7 +594,7 @@ nav .navbar-brand.title {
 }
 
 .home-creative .post-header .desc {
-  margin-top: 1.1rem;
+  margin-top: 0.5rem;
   max-width: 46rem;
   font-size: 1.05rem;
   line-height: 1.6;
@@ -592,7 +602,7 @@ nav .navbar-brand.title {
 }
 
 .home-creative .post-header {
-  margin-bottom: 2.4rem;
+  margin-bottom: 1.25rem;
 }
 
 .home-creative .post-header .desc em {
@@ -653,6 +663,22 @@ nav .navbar-brand.title {
 }
 
 /* --- News as accent cards ---------------------------------------------- */
+.home-creative .older-news > summary {
+  cursor: pointer;
+  border: 1px solid var(--global-divider-color);
+  border-left: 3px solid var(--global-theme-color);
+  border-radius: 12px;
+  padding: 0.5rem 0.85rem;
+  color: var(--global-theme-color);
+  background: var(--global-card-bg-color);
+  font-weight: 600;
+}
+
+.home-creative .older-news > summary:hover,
+.home-creative .older-news > summary:focus-visible {
+  background: var(--grad-soft);
+}
+
 .home-creative .news table {
   border-collapse: separate;
   border-spacing: 0 0.6rem;
@@ -820,7 +846,7 @@ nav .navbar-brand.title {
 }
 
 .home-creative .home-intro-copy ul {
-  margin: 1.25rem 0 1.5rem;
+  margin: 0.75rem 0 1rem;
   padding-left: 2rem;
 }
 
@@ -828,6 +854,58 @@ nav .navbar-brand.title {
   margin-bottom: 0.3rem;
   padding-left: 0.15rem;
   line-height: 1.55;
+}
+
+/* Keep the latest update close to the introduction. */
+.home-creative {
+  margin-top: -0.75rem;
+}
+
+.home-creative .home-intro-copy > :last-child,
+.home-creative #bio-personal > :last-child {
+  margin-bottom: 0;
+}
+
+.home-creative .bio-toggle {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--global-theme-color);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.home-creative #news::after {
+  transform: scaleX(1);
+}
+
+.home-creative #news {
+  margin: 1.25rem 0 0.5rem;
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 576px) and (max-width: 900px) {
+  .home-creative .home-intro {
+    grid-template-columns: clamp(6rem, 16vw, 9rem) minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .home-creative .home-intro-copy p,
+  .home-creative .home-intro-copy li {
+    line-height: 1.4;
+  }
+
+  .home-creative .home-intro-copy p:not(:last-child),
+  .home-creative .home-intro-copy ul {
+    margin-block: 0 0.65rem;
+  }
+
+  .home-creative .home-intro-copy li {
+    margin-bottom: 0.1rem;
+  }
 }
 
 .home-creative .profile {
@@ -857,7 +935,11 @@ nav .navbar-brand.title {
 @media (max-width: 575.98px) {
   .home-creative .home-intro {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1rem;
+  }
+
+  .home-creative .home-intro .profile {
+    width: min(38vw, 9rem);
   }
 }
 
@@ -887,9 +969,8 @@ nav .navbar-brand.title {
 
 /* --- Scroll reveal (server-rendered initial hidden state, no flash) ----- */
 .home-creative .post-header,
-.home-creative article > h2,
+.home-creative article > h2:not(#news),
 .home-creative ol.bibliography > li,
-.home-creative .news .table-responsive tr,
 .home-creative .social {
   opacity: 0;
   transform: translateY(22px);
@@ -911,8 +992,7 @@ nav .navbar-brand.title {
   .home-creative .post-header,
   .home-creative article > h2,
   .home-creative ol.bibliography > li,
-  .home-creative .news .table-responsive tr,
-  .home-creative .social {
+    .home-creative .social {
     opacity: 1;
     transform: none;
     transition: none;
@@ -934,4 +1014,8 @@ nav .navbar-brand.title {
 // Keep the original moving aura from adding a horizontal scrollbar.
 body {
   overflow-x: clip;
+}
+
+.home-creative h2[id] {
+  scroll-margin-top: 5rem;
 }
